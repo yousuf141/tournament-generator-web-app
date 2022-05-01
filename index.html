@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOT Homepage</title>
+
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
+    <script defer src="./js/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="./js/main.js"></script>
+
+    <script src="https://unpkg.com/gojs@2.2.7/release/go.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="header-title">Tournament Generator</h1>
+      <a class="header-link" href="./index.html"
+        ><img class="header-image" src="./images/header-image.png"
+      /></a>
+    </header>
+    <main>
+      <section id="tot-generation-inputs">
+        <div class="content-wrapper">
+          <h2>Welcome to the Tournament Generator!</h2>
+          <hr />
+          <p>
+            Fill in the below details and click 'Generate' to create a
+            tournament schedule.
+          </p>
+          <form id="tot-generation-input-form">
+            <div class="mb-3">
+              <label for="txtTournamentName" class="form-label"
+                >Tournament Name:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="txtTournamentName"
+                placeholder="Enter tournament name here..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="sltTournamentSize" class="form-label"
+                >Tournament Size:</label
+              >
+              <select id="sltTournamentSize" class="form-select">
+                <option selected value="4">4</option>
+                <option value="8">8</option>
+                <option value="16">16</option>
+                <option value="32">32</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="sltTournamentType" class="form-label"
+                >Tournament Type:</label
+              >
+              <select id="sltTournamentType" class="form-select">
+                <option selected value="single">Single</option>
+                <option value="roundRobin">Round Robin</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label">Team Names:</label>
+              <div id="tournamentNameSelection" class="mb-3"></div>
+              <div id="tournamentNameSelectionTools" class="mb-3">
+                <button
+                  id="btnClearTeamNames"
+                  class="btn btn-danger btn-sm mx-3"
+                  type="button"
+                >
+                  Clear Team Names
+                </button>
+                <button
+                  id="btnRandomiseTeamNames"
+                  class="btn btn-primary btn-sm"
+                  type="button"
+                >
+                  Random Team Names
+                </button>
+              </div>
+            </div>
+            <button
+              type="button"
+              id="btnGenerateTournament"
+              class="main-button btn btn-primary btn-lrg mb-3"
+            >
+              <div
+                hidden
+                id="spnGenerateTournament"
+                class="spinner-border spinner-border-sm"
+                role="status"
+              ></div>
+              Generate!
+            </button>
+            <div
+              id="flGenerateTournamentFailed"
+              class="alert alert-danger"
+              hidden
+              role="alert"
+            >
+              Failed to generate a tournament schedule...
+            </div>
+            <div
+              id="flGenerateTournamentSuccess"
+              class="alert alert-success"
+              hidden
+              role="alert"
+            >
+              Successfully generated the tournament schedule...
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
