@@ -1,0 +1,23 @@
+{
+  "name": "tournament-generator-web-app",
+  "version": "1.0.0",
+  "description": "uni work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yousuf141/tournament-generator-web-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yousuf141/tournament-generator-web-app/issues"
+  },
+  "homepage": "https://github.com/yousuf141/tournament-generator-web-app#readme",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}

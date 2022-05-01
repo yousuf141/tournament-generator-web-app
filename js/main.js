@@ -135,17 +135,20 @@ function onGenerateTournamentSchedule() {
       "Content-Type": "application/json",
     },
   })
-    .then((data) => {
-      if (data.status >= 400) {
+    .then((response) => {
+      if (response.status >= 400) {
         toastGenerateError();
         return;
       }
+      return response.json();
+    })
+    .then((data) => {
       toastGenerateSuccess();
-      window.open("http://localhost:3000/tournament/626df4ca3b5c8efc6b52a3e6");
+      window.open(`/schedule.html?id=${data._id}`);
     })
     .catch((err) => {
       console.error(err);
-      displayGenerateError();
+      toastGenerateError();
     })
     .finally(() => {
       spinner.setAttribute("hidden", true);
