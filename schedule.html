@@ -10,7 +10,7 @@
     <script defer src="./js/bootstrap/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./css/main.css" />
-    <script defer src="./js/main.js"></script>
+    <script defer src="./js/schedule.js"></script>
 
     <script src="https://unpkg.com/gojs@2.2.7/release/go.js"></script>
   </head>
@@ -23,12 +23,46 @@
         </header>
     </body>
         <main>
-            <section id="tot-generation-ouput">
-                <p>The Output:</p>
-                <div id="tot-generation-diagram">
-                <canvas id="tot-generation-canvas" width="1600" height="700"
-                    >Your browser does not support the Canvas feature.</canvas
+            <section id="tot-generation-metadata">
+                <div class="mb-3">
+                    <label for="txtCopyLink" class="form-label"
+                        >Copy Tournament Schedule Link:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="txtCopyLink"
+                        readonly
+                    />
+                </div>
+            </section>
+            <section>
+                <div id="tot-generation-diagram"></div>
+            </section>
+            <section>
+                <div
+                id="flShowScheduleFailed"
+                class="alert alert-danger"
+                hidden
+                role="alert"
                 >
+                Failed to display the schedule: No Tournament ID was provided.
+                </div>
+                <div
+                id="flGetTournamentFailed"
+                class="alert alert-danger"
+                hidden
+                role="alert"
+                >
+                Failed to display the schedule: No Tournament with that ID exists.
+                </div>
+                <div
+                id="flGetScheduleFailed"
+                class="alert alert-danger"
+                hidden
+                role="alert"
+                >
+                Server Error: failed to get schedule information.
                 </div>
             </section>
         </main>

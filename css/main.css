@@ -58,23 +58,11 @@ header {
 }
 
 #tot-generation-diagram {
-  margin: 20px;
+  margin: 0 auto;
   border: 1px solid black;
   background: hsl(0, 0%, 100%) none repeat scroll 0% 0%;
-  width: 1600px;
-  height: 700px;
-  position: fixed;
-}
-
-#tot-generation-canvas {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-  user-select: none;
-  touch-action: none;
-  width: 1600px;
-  height: 700px;
+  width: 90vw;
+  height: 90vh;
 }
 
 #tournamentNameSelectionTools {

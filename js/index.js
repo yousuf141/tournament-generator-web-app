@@ -144,7 +144,7 @@ function onGenerateTournamentSchedule() {
     })
     .then((data) => {
       toastGenerateSuccess();
-      window.open(`/schedule.html?id=${data._id}`);
+      window.open(`/schedule?id=${data._id}`);
     })
     .catch((err) => {
       console.error(err);

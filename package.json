@@ -20,5 +20,8 @@
   "homepage": "https://github.com/yousuf141/tournament-generator-web-app#readme",
   "dependencies": {
     "http-server": "^14.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
