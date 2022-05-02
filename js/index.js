@@ -1,5 +1,7 @@
 init();
 
+const BASE_URL = "https://tournament-generator-web-serve.herokuapp.com";
+
 function init() {
   refreshTournamentUI();
 
@@ -128,7 +130,7 @@ function onGenerateTournamentSchedule() {
   spinner.removeAttribute("hidden");
   btnGenerateTournament.setAttribute("disabled", true);
 
-  fetch("http://localhost:3000/tournament", {
+  fetch(`${BASE_URL}/tournament`, {
     method: "POST",
     body: JSON.stringify(payload),
     headers: {
@@ -196,7 +198,7 @@ async function randomiseTeamNames() {
 
 async function getRandomNames() {
   try {
-    const res = await fetch("http://localhost:3000/random-name");
+    const res = await fetch(`${BASE_URL}/random-name`);
     return await res.json();
   } catch (e) {
     console.error(e);

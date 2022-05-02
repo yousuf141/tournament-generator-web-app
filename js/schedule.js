@@ -1,3 +1,5 @@
+const BASE_URL = "https://tournament-generator-web-serve.herokuapp.com";
+
 init();
 
 function init() {
@@ -42,7 +44,7 @@ async function updateSchedule(id) {
 
 async function retrieveSchedule(id) {
   try {
-    const res = await fetch(`http://localhost:3000/schedule/${id}`, {
+    const res = await fetch(`${BASE_URL}/schedule/${id}`, {
       method: "GET",
     });
     const data = await res.json();
@@ -56,7 +58,7 @@ async function retrieveSchedule(id) {
 
 async function createSchedule(id) {
   try {
-    const res = await fetch(`http://localhost:3000/schedule/${id}`, {
+    const res = await fetch(`${BASE_URL}/schedule/${id}`, {
       method: "POST",
     });
     const data = await res.json();
@@ -70,12 +72,9 @@ async function createSchedule(id) {
 
 async function getTournamentInfo(tournamentId) {
   try {
-    const res = await fetch(
-      `http://localhost:3000/tournament/${tournamentId}`,
-      {
-        method: "GET",
-      }
-    );
+    const res = await fetch(`${BASE_URL}/tournament/${tournamentId}`, {
+      method: "GET",
+    });
     if (res.status >= 400) return null;
     return await res.json();
   } catch (e) {
